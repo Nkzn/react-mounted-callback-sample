@@ -23,10 +23,19 @@
     <script>
       window.addEventListener('initializedWithClassComponent', (e) => {
         console.log('initializedWithClassComponent', { detail: e.detail });
+
+        // このタイミングでquerySelectorしてもOK
+        const classDiv = document.querySelector('div.class-div');
+        console.log('initializedWithClassComponent', { classDiv }); // classDivの中身はe.detailと同じ
+
       }, false);
 
       window.addEventListener('initializedWithHooksComponent', (e) => {
         console.log('initialized(or updated)WithHooksComponent', { detail: e.detail });
+
+        // このタイミングでquerySelectorしてもOK
+        const hooksDiv = document.querySelector('div.hooks-div');
+        console.log('initialized(or updated)WithHooksComponent', { hooksDiv }); // hooksDivの中身はe.detailと同じ
       }, false);
     </script>
   </head>

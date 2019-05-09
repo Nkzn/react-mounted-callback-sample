@@ -1,5 +1,4 @@
 import React, { useRef, useEffect } from 'react';
-import { findDOMNode } from 'react-dom';
 
 export default () => {
 
@@ -7,14 +6,13 @@ export default () => {
 
   useEffect(() => {
     if (divRef.current) {
-      const divElement = findDOMNode(divRef.current);
-      const event = new CustomEvent('initializedWithHooksComponent', { detail: divElement });
+      const event = new CustomEvent('initializedWithHooksComponent', { detail: divRef.current });
       window.dispatchEvent(event);  
     }
   });
 
   return (
-    <div ref={divRef}>
+    <div className="hooks-div" ref={divRef}>
       This is hooks component.
     </div>
   )
