@@ -1,6 +1,8 @@
 import React from 'react';
 import logo from './logo.svg';
 import './App.css';
+import ClassComponent from './ClassComponent';
+import HooksComponent from './HooksComponent';
 
 function App() {
   return (
@@ -18,6 +20,8 @@ function App() {
         >
           Learn React
         </a>
+        <ClassComponent />
+        <HooksComponent />
       </header>
     </div>
   );
